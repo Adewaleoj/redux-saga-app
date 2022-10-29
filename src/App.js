@@ -1,6 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Header from "./component/Header";
 import AddEditUser from "./pages/AddEditUser";
@@ -15,13 +15,13 @@ function App() {
       <div className="App">
         <ToastContainer />
         <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/addUser" component={AddEditUser} />
-          <Route exact path="/editUser/:id" component={AddEditUser} />
-          <Route exact path="/userInfo/:id" component={UserInfo} />
-          <Route exact path="/about" component={About} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/addUser" element={<AddEditUser />} />
+          <Route path="/editUser/:id" element={<AddEditUser />} />
+          <Route path="/userInfo/:id" element={<UserInfo />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { MDBValidation, MDBInput, MDBBtn } from "mdb-react-ui-kit";
 import { useDispatch, useSelector } from "react-redux";
 import { createUserStart, updateUserStart } from "../redux/actions";
-import { useHistory, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const initialState = {
@@ -12,13 +12,25 @@ const initialState = {
   address: "",
 };
 
+const options = [{
+  label: "Active",
+  value : "active"
+},
+{
+  label: "Inactive",
+  value : "Inactive"
+},
+]
+
+
 const AddEditUser = () => {
   const [formValue, setFormValue] = useState(initialState);
   const { users } = useSelector((state) => state.data);
-  const { name, email, phone, address } = formValue;
+  const { name, email, phone, address, status } = formValue;
   const [editMode, setEditMode] = useState(false);
+  const [statusErrMsg, setStatusErrMsg] = useState(null);
   const dispatch = useDispatch();
-  const history = useHistory();
+  const navigate = useNavigate();
   const { id } = useParams();
   useEffect(() => {
     if (id) {
@@ -34,19 +46,28 @@ const AddEditUser = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name && email && phone && address) {
+    if(!status) {
+      setStatusErrMsg("Please provide a Status")
+    }
+    if (name && email && phone && address && status) {
       if (!editMode) {
         dispatch(createUserStart(formValue));
         toast.success("User Added Successfully");
-        setTimeout(() => history.push("/"), 500);
+        setTimeout(() => navigate("/"), 500);
       } else {
         dispatch(updateUserStart({ id, formValue }));
         setEditMode(false);
         toast.success("User Updated Successfully");
-        setTimeout(() => history.push("/"), 500);
+        setTimeout(() => navigate("/"), 500);
       }
     }
   };
+
+  const onDropdownChange = (e) => {
+    setStatusErrMsg(null);
+    setFormValue({ ...formValue, status: e.target.value })
+  }
+
   return (
     <MDBValidation
       className="row g-3"
@@ -110,11 +131,28 @@ const AddEditUser = () => {
           invalid
         />
         <br />
+        <select  onChange={onDropdownChange} 
+        value={status}
+        style={{width: "100%", borderRadius: "2px", height: "35px", borderColor: "6543ef"}}>
+          <option>Please select status</option>
+          {options.map((option, index) => (
+            <option value={option.label || ""}
+            key={index}
+            >{option.label}
+             </option>
+          ))}
+        </select>
+        {statusErrMsg && <div style={{color : "red", textAlign: "left", fontSize: "15px"}}>
+            {statusErrMsg}
+            </div>
+        }
+        <br />
+        <br />
         <div className="col-12">
           <MDBBtn style={{ marginRight: "10px" }} type="submit">
             {editMode ? "Update" : "Add"}
           </MDBBtn>
-          <MDBBtn onClick={() => history.push("/")} color="danger">
+          <MDBBtn onClick={() => navigate("/")} color="danger">
             Go Back
           </MDBBtn>
         </div>

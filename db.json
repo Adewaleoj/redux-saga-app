@@ -1,39 +1,116 @@
 {
   "users": [
     {
-      "name": "Test4554",
-      "email": "testt1@gmail.com",
-      "phone": "87878787",
-      "address": "Jkjk",
-      "id": 3
+      "name": "iou",
+      "email": "fayobio17@gmail.com",
+      "phone": "8139588798",
+      "address": "kll",
+      "id": 14,
+      "status": "Active"
     },
     {
-      "name": "James bond",
-      "email": "James@gmail.com",
-      "phone": "877676777",
-      "address": "India",
-      "id": 4
+      "name": "aoakinsote",
+      "email": "akinsotee@gmail.com",
+      "phone": "8139588798",
+      "address": "TTTT5",
+      "id": 16,
+      "status": "Active"
     },
     {
-      "name": "updated",
-      "email": "ihjwih@kekh.com",
-      "phone": "9987987",
-      "address": "jhwhw",
-      "id": 9
+      "name": "peter",
+      "email": "peter@gmail.com",
+      "phone": "07032650303",
+      "address": "idanre",
+      "id": 18,
+      "status": "Active"
     },
     {
-      "name": "James",
-      "email": "u8ywufy8@ufehu",
-      "phone": "8324787687",
-      "address": "gwufg",
-      "id": 10
+      "name": "ade",
+      "email": "akinsotee@gmail.com",
+      "phone": "8139588798",
+      "address": "oyo",
+      "status": "Active",
+      "id": 19
     },
     {
-      "name": "john",
-      "email": "john@gmail.com",
-      "phone": "6775757",
-      "address": "India",
-      "id": 11
+      "name": "tayo",
+      "email": "tayo@gmail.com",
+      "phone": "07067817106",
+      "address": "uch",
+      "status": "Inactive",
+      "id": 20
+    },
+    {
+      "name": "emmauel",
+      "email": "emmuel@gmail.com",
+      "phone": "07039334534",
+      "address": "yemetu",
+      "status": "Active",
+      "id": 21
+    },
+    {
+      "name": "iou",
+      "email": "fayobio17@gmail.com",
+      "phone": "8139588798",
+      "address": "kll",
+      "id": 14,
+      "status": "Active"
+    },
+    {
+      "name": "aoakinsote",
+      "email": "akinsotee@gmail.com",
+      "phone": "8139588798",
+      "address": "TTTT5",
+      "id": 16,
+      "status": "Active"
+    },
+    {
+      "name": "Adewale",
+      "email": "fayobio17@gmail.com",
+      "phone": "08139588798",
+      "address": "ibadan",
+      "id": 17,
+      "status": "Inactive"
+    },
+    {
+      "name": "luke",
+      "email": "luke@gmail.com",
+      "phone": "07032650303",
+      "address": "alade",
+      "id": 18,
+      "status": "Active"
+    },
+    {
+      "name": "Bowale",
+      "email": "bowale@gmail.com",
+      "phone": "08139588798",
+      "address": "akure",
+      "status": "Active",
+      "id": 19
+    },
+    {
+      "name": "taiwo",
+      "email": "taiwo@gmail.com",
+      "phone": "07067817106",
+      "address": "lagos",
+      "status": "Inactive",
+      "id": 20
+    },
+    {
+      "name": "emmauela",
+      "email": "emmuela@gmail.com",
+      "phone": "07039334534",
+      "address": "iyemetu",
+      "status": "Active",
+      "id": 21
+    },
+    {
+      "name": "nike",
+      "email": "nike@gmail.com",
+      "phone": "66543",
+      "address": "lagos",
+      "status": "Inactive",
+      "id": 22
     }
   ]
 }
